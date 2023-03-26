@@ -1,2 +1,5 @@
 # cvsmigration
-This repo just contains my script how I have migrated my CVS version history with tags from two branches
+This repo just contains my script (git-migration.sh) how I have migrated my CVS version history with tags from two branches.
+The migraton was done for my main CPP project.
+
+A new migration was added for my pascal stone age stuff.
