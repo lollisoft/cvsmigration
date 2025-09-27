@@ -11,53 +11,25 @@ mkdir cvs_migration_pascal
 
 
 cd cvs_migration_pascal/
-
-#git init
 git clone git@github.com:lollisoft/pascal.git
-git cvsimport -a -d :pserver:anonymous@cvsserver.behrens.de:/home/cvsroot PASCAL
+git cvsimport -p "-x" -a -d :pserver:anonymous@cvsserver.behrens.de:/home/cvsroot PASCAL
 git branch -M main
 git remote add origin git@github.com:lollisoft/pascal.git
 git push -u origin main
-
-##echo "# pascal" >> README.md
-#git init
-##git add README.md
-#git cvsimport -a -d :pserver:anonymous@cvsserver.behrens.de:/home/cvsroot PASCAL
-##git commit -m "CVS Import"
-##git branch -M main
-##git remote add origin git@github.com:lollisoft/pascal.git
-###git push -u origin main
-
-#git clone git@github.com:lollisoft/pascal.git
-#git cvsimport -a -d :pserver:anonymous@cvsserver.behrens.de:/home/cvsroot PASCAL
-#git remote add origin git@github.com:lollisoft/pascal.git
-##git checkout -b main
-##git add .
-#git commit -m "Freshly imported Pascal"
-#git push -u origin main 
-
 cd ..
 
-exit
-
 cd cvs_migration_old/
-
-git clone git@github.com:lollisoft/lbdmf_oldCVSBranch.git
-git remote add origin git@github.com:lollisoft/lbdmf_oldCVSBranch.git
-#git checkout -b old
-#git add .
-#git commit -m "New branch"
-#git push -u origin old
-
+git clone git@github.com:lollisoft/lbdmfOldCVSBranch.git
+git cvsimport -p "-x" -a -d :pserver:anonymous@cvsserver.behrens.de:/home/cvsroot lbdmf 
+git branch -M main
+git remote add origin git@github.com:lollisoft/lbdmfOldCVSBranch.git
+git push -u origin main
 cd ..
 
 cd cvs_migration/
-
 git clone git@github.com:lollisoft/lbdmf.git
+git cvsimport -p "-x" -o Release_1_0_4_stable_rc1_branch -d :pserver:anonymous@cvsserver.behrens.de:/home/cvsroot lbdmf 
+git branch -M main
 git remote add origin git@github.com:lollisoft/lbdmf.git
-#git checkout -b main
-#git add .
-#git commit -m "New branch"
-#git push -u origin main
-
+git push -u origin main
 cd ..
