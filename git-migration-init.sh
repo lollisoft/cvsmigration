@@ -8,6 +8,8 @@ mkdir cvs_migration
 mkdir cvs_migration_old
 mkdir cvs_migration_pascal
 
+# https://stackoverflow.com/questions/7452995/error-in-migrating-cvs-to-git
+
 cd cvs_migration_pascal/
 git clone git@github.com:lollisoft/pascal.git
 git cvsimport -p "-x" -a -d :pserver:anonymous@cvsserver.behrens.de:/home/cvsroot PASCAL
